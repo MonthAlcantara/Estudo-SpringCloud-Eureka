@@ -1,15 +1,19 @@
 #Indicação de qual porta será rodada o meu servidor
 server:
   port: 9000
- #Configuração do Eureka em si
+#Configuração do Eureka em si
+  #Host do servidor
 eureka:
   instance:
     hostname: localhost
-
+  #Informando se essa Aplicação além de servidor, será tambpem um client
   client:
     register-whit-eureka: false
     fetch-registry: false
+  #Como esse servidor irá escutar os clientes que chegam pra ele. Rota pela qual haverá comunicação
+  #e o Eureka saberá quem está chegando
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  # Configuração do servidor para evitar timeout
   server:
     eviction-interval-timer-in-ms: 1000
