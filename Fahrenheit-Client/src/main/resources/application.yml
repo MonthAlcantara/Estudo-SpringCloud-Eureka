@@ -1,1 +1,15 @@
+ server:
+  port: 9001
+# Não é obrigatório mas fica melhor para localizar o service
+# Adicionando um nome a aplicação, na hora de fazer a requisição para este serviço, basta passar
+# o nome como url base ex.: http://fahrenheit-service/...algum complemento para um endpoint
+spring:
+  application:
+    name: fahrenheit-service
+
+#Nesse caso eu informo o endereço do Eureka server onde essa app vai se registrar
+eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:9000/eureka/
 

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableEurekaClient // Dessa forma o EurekaServer consegue descobrir essa aplicação como Client
 public class FahrenheitClientApplication {
 
 	public static void main(String[] args) {
