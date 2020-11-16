@@ -1,0 +1,15 @@
+#Indicação de qual porta será rodada o meu servidor
+server:
+  port: 9000
+ #Configuração do Eureka em si
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    register-whit-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 1000
